@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>House Price Prediction</title>
+	<style>
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input {
+			margin: 10px;
+			padding: 10px;
+			width: 300px;
+		}
+		select {
+			margin: 10px;
+			padding: 10px;
+			width: 300px;
+		}
+		button {
+			margin: 10px;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100px;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+	</style>
+</head>
+<body>
+	<h1>House Price Prediction</h1>
+	<form action="{{ url_for('predict') }}" method="POST">
+		<label for="sqft">SqFt:</label>
+		<input type="text" id="sqft" name="sqft" required>
+
+		<label for="bedrooms">Bedrooms:</label>
+		<input type="text" id="bedrooms" name="bedrooms" required>
+
+		<label for="bathrooms">Bathrooms:</label>
+		<input type="text" id="bathrooms" name="bathrooms" required>
+
+		<label for="offers">Offers:</label>
+		<input type="text" id="offers" name="offers" required>
+
+		<label for="neighborhood">Neighborhood:</label>
+		<select id="neighborhood" name="neighborhood">
+			<option value="West">West</option>
+			<option value="East">East</option>
+			<option value="North">North</option>
+			<option value="South">South</option>
+		</select>
+
+		<label for="brick">Brick:</label>
+		<select id="brick" name="brick">
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
+
+		<button type="submit">Predict</button>
+	</form>
+</body>
+</html>
